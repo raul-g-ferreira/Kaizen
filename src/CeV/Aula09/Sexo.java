@@ -1,6 +1,10 @@
 package CeV.Aula09;
 
 public enum Sexo {
-    MASCULINO,
-    FEMININO
+    MASCULINO("M"),
+    FEMININO("F");
+
+    Sexo(String i) {
+
+    }
 }
