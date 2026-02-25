@@ -31,11 +31,19 @@ public class Operation {
                 break;
 
             case 7:
+                listarContas();
+                break;
+            default:
                 System.exit(1);
         }
         Menu.showMenu();
     }
 
+
+    private static void listarContas() {
+        if (Banco.contaBancariaList.isEmpty()) System.out.println("Lista vazia.");
+        else Banco.contaBancariaList.forEach(System.out::println);
+    }
 
     public static void abrirConta(ContaBancaria conta) {
         if (Banco.contaBancariaList.contains(conta)) {
