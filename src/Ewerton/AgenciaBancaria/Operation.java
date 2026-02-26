@@ -1,6 +1,7 @@
 package Ewerton.AgenciaBancaria;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Scanner;
 
 public class Operation {
@@ -13,27 +14,22 @@ public class Operation {
             case 2:
                 fecharConta(Menu.selectConta());
                 break;
-
             case 3:
                 transferir(Menu.selectConta(),Menu.selectConta());
                 break;
-
             case 4:
                 sacar(Menu.selectConta());
                 break;
-
             case 5:
                 depositar(Menu.selectConta());
                 break;
-
             case 6:
                 mostrarSaldo(Menu.selectConta());
                 break;
-
             case 7:
                 listarContas();
                 break;
-            default:
+            case 8:
                 System.exit(1);
         }
         Menu.showMenu();
@@ -42,7 +38,7 @@ public class Operation {
 
     private static void listarContas() {
         if (Banco.contaBancariaList.isEmpty()) System.out.println("Lista vazia.");
-        else Banco.contaBancariaList.forEach(System.out::println);
+        else Banco.contaBancariaList.forEach(contaBancaria -> System.out.println(contaBancaria.getNomeTitular() + "/" + contaBancaria.getNumAgencia() + "/" + contaBancaria.getNumConta()));
     }
 
     public static void abrirConta(ContaBancaria conta) {
@@ -87,7 +83,7 @@ public class Operation {
 
     public static void mostrarSaldo(ContaBancaria contaBancaria) {
         System.out.println("===========================");
-        System.out.println("SALDO: " + contaBancaria.getSaldo().setScale(2));
+        System.out.println("SALDO: " + contaBancaria.getSaldo().setScale(2, RoundingMode.HALF_EVEN));
         System.out.println("===========================");
     }
 
