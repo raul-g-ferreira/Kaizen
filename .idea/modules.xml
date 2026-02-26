@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Kaizen.iml" filepath="$PROJECT_DIR$/Kaizen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/first-spring-application/main/main.iml" filepath="$PROJECT_DIR$/first-spring-application/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/first-spring-application/test/test.iml" filepath="$PROJECT_DIR$/first-spring-application/test/test.iml" />
     </modules>
   </component>
 </project>
